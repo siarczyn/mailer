@@ -1,5 +1,3 @@
-from selenium import webdriver
-from selenium import webdriver
 from time import sleep
 import openpyxl
 import pandas as pd
@@ -19,9 +17,9 @@ from emailtemplate import html
 
 # TODO pozbyc sie tego
 # settings
-# email1 = 'oferta@fabryka-stron-gdansk.pl'
-# password = '>3iLy-VD:y'
-# file = 'kosmetyczkidata_samemaile.xlsx'
+email1 = 'oferta@fabryka-stron-gdansk.pl'
+password = 'yourpassword'
+file = 'kosmetyczkidata_samemaile.xlsx'
 
 
 # content of the mail
@@ -41,10 +39,7 @@ receiver_email = "oferta@fabryka-stron-gdansk"
 print('0')
 s = df['email']
 
-print("ide spac do 8:00")
-# sleep(16200)
 
-# TODO schowac to do funkcji
 
 lengthoftheList = len(s)
 print(lengthoftheList)
@@ -84,8 +79,7 @@ def sendMails(lengthoftheList,sender_email,numberofemail, passedval=0 ):
         server.login(sender_email, password)
 
         # loop for sending emails from database
-        # for i in range(2288, 3655):  # we have already send 500 emails run1 (0,500) #also (500-100)
-        while passedval < lengthoftheList:  # we have already send 500 emails run1 (0,500) #also (500-100) 2288
+        while passedval < lengthoftheList: 
             try:
             # how many mails will be sent (random number beetwen 5 and 50)
                 num1 = randint(5, 59)
